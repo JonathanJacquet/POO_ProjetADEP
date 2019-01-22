@@ -3,6 +3,7 @@
  * Class to connect to the data base
  */
 class dataBase {
+
   const host  = "localhost";
   const dbName = "signing";
   const login = "phpmyadmin";
