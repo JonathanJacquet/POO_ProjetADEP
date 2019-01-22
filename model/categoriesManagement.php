@@ -41,7 +41,7 @@ public function getCategory($id){
 
   function updateCategory(category $category) {
     $request = $this->getDb()->prepare("UPDATE categories SET category_name WHERE id = ?");
-    $request->execute([$category->getName(), $category->get()]);
+    $request->execute([$category->getName(), $category->getName()]);
 
     $request->closeCursor();
 

@@ -10,7 +10,7 @@ class categoryController
 
   public function showAddCategories(){
     $categoriesManagement = new categoriesManagement();
-    $categoriesManagement = new category($_POST);
+    $category = new category($_POST);
     $categoriesManagement->addCategory($category)
     redirectTo("categoriesList");
 
