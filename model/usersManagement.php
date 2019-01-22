@@ -1,11 +1,10 @@
 <?php 
 
-class usersManager extends manager {
+class usersManagement extends manager {
 
 //Récupère les données de tous les utilisateurs
 function getUsers() {
-    $db = $this->getDb();
-    $request = $db->query('SELECT * FROM users');
+    $request = $this->getDb()->query('SELECT * FROM users');
     $result = $request->fetchall(PDO::FETCH_ASSOC);
     $request->closeCursor();
     return $result;
