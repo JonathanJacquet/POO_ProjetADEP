@@ -1,7 +1,5 @@
 <?php
-
 //Function qui retourne un tableau contenant les routes de notre application
-
 //Modèle des routes
 //"NomDeLaRoute" => [
 //  "Controller",
@@ -14,6 +12,7 @@
 //]
 function getRoutes() {
   return [
+    //route basique
     "" => [
       "user",
       "userLogin"
@@ -22,95 +21,94 @@ function getRoutes() {
     "teacher" => [
       "admin",
       "showTeacherView",
-      "status" => "teacher"
+      "getStatus" => "teacher"
     ],
     //page principale des admins
     "admin" => [
       "admin",
       "showAdminView",
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     //~~~~~~~~~~~~~~~~~~~~~~~~USERS~~~~~~~~~~~~~~~~~~~
     "usersList" => [
       "admin",
       "showUsersList",
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     "userAdd" => [
       "admin",
       "showAddUser",
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     "userUpdate" => [
       "admin",
       "showUpdateUser",
       ["id" => ["integer"]],
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     "userDelete" => [
       "admin",
       "showDeleteUser",
       ["id" => ["integer"]],
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     "usersSort" => [
       "admin",
       "showUsersList",
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     //La deconnexion
     "userLogout" => [
       "user",
       "userLogout",
-      "status" => "teacher"
+      "getStatus" => "teacher"
     ],
     //~~~~~~~~~~~~~~~~~~~~~~~~SHEET~~~~~~~~~~~~~~~~~~~
     "sheetsList" => [
-      "sheets",
+      "sheet",
       "showListSheets",
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     "sheetAdd" => [
-      "sheets",
+      "sheet",
       "showAddSheet",
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     "sheetUpdate" => [
-      "sheets",
+      "sheet",
       "showUpdateSheet",
       ["id" => ["integer"]],
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     "sheetDelete" => [
-      "sheets",
+      "sheet",
       "showDeleteSheet",
       ["id" => ["integer"]],
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     //~~~~~~~~~~~~~~~~~~~~~~~~CATEGORY~~~~~~~~~~~~~~~~~~~
     "categoriesList" => [
       "category",
       "showListCategories",
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     "categoryAdd" => [
       "category",
       "showAddCategories",
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     "categoryUpdate" => [
       "category",
       "showUpdateCategories",
       ["id" => ["integer"]],
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
     "categoryDelete" => [
       "category",
       "showDeleteCategories",
       ["id" => ["integer"]],
-      "status" => "admin"
+      "getStatus" => "admin"
     ],
   ];
 }
-
  ?>

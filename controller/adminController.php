@@ -1,5 +1,9 @@
 <?php
 
+
+class adminController {
+    
+
 function showAddUser(){
 //~~~~~~~~~~~~~~~Ajoute un utilisateur~~~~~~~~~~~~~~~
 //Je vérifie que le form contient quelque chose
@@ -58,4 +62,5 @@ function showUsersList() {
   require "view/listUsersView.php";
 }
 
+}
 ?>
