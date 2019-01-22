@@ -2,5 +2,9 @@
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 # Useful .gitignore templates: https://github.com/github/gitignore
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4d62fb9bdabeded684c118ae2138dbf937bdd1cf
 model/dataBase.php
 config/global.php
