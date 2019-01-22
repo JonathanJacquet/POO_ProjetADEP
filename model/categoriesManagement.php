@@ -23,7 +23,7 @@ public function getCategory($id){
   public function addCategory(category $category) {
     $query = $this->getDb()->prepare("INSERT INTO categories(gategory_name) VALUES(:category_name)");
     $result = $query->execute([
-      "category_name" => $compte->getNom()
+      "category_name" => $compte->getName()
     ]);
 
     return $result;
@@ -41,7 +41,7 @@ public function getCategory($id){
 
   function updateCategory(category $category) {
     $request = $this->getDb()->prepare("UPDATE categories SET category_name WHERE id = ?");
-    $request->execute([$category->get(), $category->get()]);
+    $request->execute([$category->getName(), $category->get()]);
 
     $request->closeCursor();
 
