@@ -3,7 +3,7 @@
 /**
  *
  */
-class sheet extends manager
+class sheet extends entity
 {
 
   protected $sheetId;
@@ -109,82 +109,82 @@ class sheet extends manager
 
   public function getSheetId()
   {
-    return $this->sheetId = $sheetId;
+    return $this->sheetId;
   }
 
   public function getOrganization()
   {
-    return $this->organization = $organization;
+    return $this->organization;
   }
 
   public function getEntitled()
   {
-    return $this->entitled = $entitled;
+    return $this->entitled;
   }
 
   public function getStart()
   {
-    return $this->start = $start;
+    return $this->start;
   }
 
   public function getEnd()
   {
-    return $this->end = $end;
+    return $this->end;
   }
 
   public function getMondayMorning()
   {
-    return $this->mondayMorning = $mondayMorning;
+    return $this->mondayMorning;
   }
 
   public function getMondayAfternoon()
   {
-    return $this->mondayAfternoon = $mondayAfternoon;
+    return $this->mondayAfternoon;
   }
 
   public function getTuesdayMorning()
   {
-    return $this->tuesdayMorning = $tuesdayMorning;
+    return $this->tuesdayMorning;
   }
 
   public function getTuesdayAfternoon()
   {
-    return $this->tuesdayAfternoon = $tuesdayAfternoon;
+    return $this->tuesdayAfternoon;
   }
 
   public function getWednesdayMorning()
   {
-    return $this->wednesdayMorning = $wednesdayMorning;
+    return $this->wednesdayMorning;
   }
 
   public function getWednesdayAfternoon()
   {
-    return $this->wednesdayAfternoon = $wednesdayAfternoon;
+    return $this->wednesdayAfternoon;
   }
 
   public function getThursdayMorning()
   {
-    return $this->thursdayMorning = $thursdayMorning;
+    return $this->thursdayMorning;
   }
 
   public function getThurdayAfternoon()
   {
-    return $this->thurdayAfternoon = $thurdayAfternoon;
+    return $this->thurdayAfternoon;
   }
 
   public function getFridayMorning()
   {
-    return $this->fridayMorning = $fridayMorning;
+    return $this->fridayMorning;
   }
 
   public function getFridayAfternoon()
   {
-    return $this->fridayAfternoon = $fridayAfternoon;
+    return $this->fridayAfternoon;
   }
 
   public function getCategoryId()
   {
-    return $this->categoryId = $categoryId;
+    return $this->categoryId;
   }
 
   function __construct(array $data = null)

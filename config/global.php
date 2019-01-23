@@ -3,7 +3,7 @@
 function getGlobalConfig() {
   return $config = [
     "protocol" => "",
-    "host" => "localhost/Lab/microFrameworkObjet/",
+    "host" => "localhost/lab/POO_HackUnTHon/",
     "status" => ["anonymous", "teacher", "admin"],
     "defaultRoute" => ""
   ];
