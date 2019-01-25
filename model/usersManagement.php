@@ -79,28 +79,22 @@ public  function updateUser(user $user, $id) {
  public function sortUser($form){
     $db = $this->getDb();
     $sql = "SELECT * FROM users ";
-
-    if ($form["status"])
-    {
+    if ($form["status"])  {
         $sql .= "WHERE status = '" . $form['status']."'";
-                if ($form['order'])
-                    {
-                    $sql .= " ORDER BY " . $form["order"] ." ";
+          if ($form['order']) {
+            $sql .= " ORDER BY " . $form["order"] ." ";
                     }
-                        if ($form["sort"] == "1")
-                        {
-                            $sql .= " ASC";
+                    if ($form["sort"] == "1") {
+                      $sql .= " ASC";
                         }
-                            elseif ($form["sort"] == "0")
-                            {
-                                $sql .= " DESC";
+                        elseif ($form["sort"] == "0") {
+                          $sql .= " DESC";
                             }
     }
     $query = $db->query($sql);
     $result = $query->fetchall(PDO::FETCH_ASSOC);
     $query->closeCursor();
     return $result;
-}
-
+  }
 }
 ?>

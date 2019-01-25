@@ -2,6 +2,19 @@
 include "template/header.php";
  ?>
 
+ <form class="container" method="post">
+ <div class="form-row">
+   <div class="form-group col-md-4">
+     <label for="inputState">Triée par :</label>
+     <select name="order" id="inputState" class="form-control">
+       <option  value="name">Nom</option>
+       <option  value="firstname">Prénom</option>
+       <option  value="status">Statut</option>
+     </select>
+   </div>
+   <button type="submit" class="btn btn-dark  col-md-2 mt-4" style="height: 3rem;">Trier</button>
+ </div>
+ </form>
 
  <table class="table table-light">
    <thead>
