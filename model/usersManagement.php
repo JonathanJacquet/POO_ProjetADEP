@@ -1,16 +1,17 @@
-<?php 
+<?php
 
 class usersManagement extends manager {
 
 //Récupère les données de tous les utilisateurs
-function getUsers() {
-    $request = $this->getDb()->query('SELECT * FROM users');
-    $result = $request->fetchall(PDO::FETCH_ASSOC);
+ public function getUsers() {
+    $db = $this->getDb();
+    $request = $db->query('SELECT * FROM users');
+    $result = $request->fetchall(PDO::FETCH_CLASS, "user");
     $request->closeCursor();
     return $result;
 }
 //Récupère les données d'un utilisateur
-function getUser($user) {
+public function getUser($user) {
     $db = $this->getDb();
     $request = $db->prepare("SELECT * FROM users WHERE user_id = ?");
     $request->execute([$id]);
@@ -19,7 +20,7 @@ function getUser($user) {
     return $result;
 }
 //Récupère les données d'un utilisateur en fonction de son nom
-function getUserByName($userName) {
+public  function getUserByName($userName) {
     $db = $this->getDb();
     $request = $db->prepare("SELECT * FROM users WHERE name = ?");
     $request->execute([$userName]);
@@ -28,7 +29,7 @@ function getUserByName($userName) {
     return $result;
 }
 //function that adds the user
-function addUser(user $user) {
+public function addUser(user $user) {
     $db = $this->getDb();
     $request = $db->prepare("INSERT INTO users (status, name, firstname, password, mail, street, city, pc, id_pole_emploi, sex) VALUES(:status, :name, :firstname, :password, :mail, :street, :city, :pc, :id_pole_emploi, :sex)");
     $result = $request->execute([
@@ -42,11 +43,11 @@ function addUser(user $user) {
         "pc" => $user->getPc(),
         "id_pole_emploi" => $user->getNpe(),
         "sex" => $user->getSexe()
-    ]); 
-    $request->closeCursor();   
+    ]);
+    $request->closeCursor();
     return $result;
 }
-function updateUser(user $user, $id) {
+public  function updateUser(user $user, $id) {
     $db = $this->getDb();
     $id =  $_GET["id"];
     $request = $db->prepare("UPDATE users SET status = :status, name = :name, firstname = :firstname, password = :password, mail = :mail, street = :street, city = :city, pc = :pc, id_pole_emploi = :id_pole_emploi, sex = :sex WHERE user_id = :user_id");
@@ -66,7 +67,7 @@ function updateUser(user $user, $id) {
     return $result;
 }
 //function that removes the user
-function deleteUser($id) {
+ public function deleteUser($id) {
     $db = $this->getDb();
     $request = $db->prepare("DELETE FROM users WHERE user_id = ?");
     $request->execute([$id]);
@@ -75,17 +76,17 @@ function deleteUser($id) {
     return $result;
 }
 
-function sortUser($form){
+ public function sortUser($form){
     $db = $this->getDb();
     $sql = "SELECT * FROM users ";
-    
+
     if ($form["status"])
     {
         $sql .= "WHERE status = '" . $form['status']."'";
                 if ($form['order'])
                     {
                     $sql .= " ORDER BY " . $form["order"] ." ";
-                    }    
+                    }
                         if ($form["sort"] == "1")
                         {
                             $sql .= " ASC";
@@ -100,5 +101,6 @@ function sortUser($form){
     $query->closeCursor();
     return $result;
 }
+
 }
 ?>
