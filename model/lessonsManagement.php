@@ -50,7 +50,7 @@ class lessonsManagement extends manager
     return $result;
   }
   //Delete lesson in DB
-  function deleteSheet($id)
+  function deleteLesson($id)
   {
     $query = $this->_db->prepare("DELETE FROM lessons WHERE lesson_id = ?");
     $result = $query->execute([$id]);
