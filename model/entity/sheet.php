@@ -100,6 +100,13 @@ class sheet extends entity
 
   // -------------------- getters ---------------------
 
+
+  public function getSheetId()
+  {
+    return $this->sheetId;
+  }
+
+
   public function getOrganization()
   {
     return $this->organization;
@@ -157,7 +164,10 @@ class sheet extends entity
 
   public function getThursdayAfternoon()
   {
+
     return $this->thursdayAfternoon;
+
+
   }
 
   public function getFridayMorning()
