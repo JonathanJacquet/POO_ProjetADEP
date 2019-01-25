@@ -89,10 +89,12 @@ class user extends entity
     return $this->sex;
   }
 
-  function __construct(array $data = null)
+  function __construct($data = null)
   {
+    if($data) {
     $this->hydrate($data);
-  }
+      }
+    }
 }
 
  ?>

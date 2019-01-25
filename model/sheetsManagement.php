@@ -5,9 +5,9 @@ class sheetsManagement extends manager
   public function getAllSheets()
   {
     $query = $this->_db->query("SELECT * FROM sheets");
-    $result = $query->fetchall(PDO::FETCH_ASSOC);
+    $result = $query->fetchall(PDO::FETCH_CLASS, "sheet");
     $query->closeCursor();
-    return new sheet($result);
+    return $result;
   }
 
   //Function that retrieves a single sheet of the DB based on its ID
@@ -22,7 +22,7 @@ class sheetsManagement extends manager
 
   public function getSheetWithLessons($id)
   {
-    $query = $this->_db->prepare("SELECT * FROM sheets WHERE sheet_id = ?");
+    $query = $this->_db->prepare("SELECT * FROM sheets WHERE id = ?");
     $query->execute([$id]);
     $result = $query->fetch(PDO::FETCH_ASSOC);
     $query->closeCursor();
@@ -56,7 +56,7 @@ class sheetsManagement extends manager
   //Function that update a sheet in DB
   public function updateSheet(sheet $sheet)
   {
-    $query = $this->_db->prepare("UPDATE sheets SET organization = :organization, entitled = :entitled, start = :start, end = :end, monday_morning = :monday_morning, monday_afternoon = :monday_afternoon, tuesday_morning = :tuesday_morning, tuesday_afternoon = :tuesday_afternoon, wednesday_morning = :wednesday_morning, wednesday_afternoon = :wednesday_afternoon, thursday_morning = :thursday_morning, thursday_afternoon = :thursday_afternoon, friday_morning = :friday_morning, friday_afternoon = :friday_afternoon WHERE sheet_id = :sheet_id)");
+    $query = $this->_db->prepare("UPDATE sheets SET organization = :organization, entitled = :entitled, start = :start, end = :end, monday_morning = :monday_morning, monday_afternoon = :monday_afternoon, tuesday_morning = :tuesday_morning, tuesday_afternoon = :tuesday_afternoon, wednesday_morning = :wednesday_morning, wednesday_afternoon = :wednesday_afternoon, thursday_morning = :thursday_morning, thursday_afternoon = :thursday_afternoon, friday_morning = :friday_morning, friday_afternoon = :friday_afternoon WHERE id = :id)");
     $result = $query->execute([
       "organization" => $sheet->getOrganization(),
       "entitled" => $sheet->getEntitled(),
@@ -72,16 +72,33 @@ class sheetsManagement extends manager
       "thursday_afternoon" => $sheet->getThursdayAfternoon(),
       "friday_morning" => $sheet->getFridayMorning(),
       "friday_afternoon" => $sheet->getFridayAfternoon(),
-      "sheet_id" => $sheet->getSheetId()
+      "id" => $sheet->getId()
     ]);
     $query->closeCursor();
     return $result;
   }
   //Function that delete a sheet in DB
+<<<<<<< HEAD
   public function deleteSheet($id)
+=======
+  public function deleteSheet(int $id)
   {
-    $query = $this->_db->prepare("DELETE FROM sheets WHERE sheet_id = ?");
-    $result = $query->execute([$id]);
+    $query = $this->_db->prepare("DELETE FROM sheets WHERE id = ?");
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $query->execute([$id]);
+    $query->closeCursor();
+    return $result;
+  }
+
+
+
+  public function getTeachersByStatus(user $user)
+>>>>>>> 48f86885e0f6997e7949bdd4bf3b6063d08fa6ff
+  {
+    $query = $this->_db->prepare("SELECT user_id, status, name FROM users WHERE status = :status");
+    $result = $query->execute([
+      "status" => $user->getStatus("teacher")
+      ]);
     $query->closeCursor();
     return $result;
   }
