@@ -1,5 +1,5 @@
 <?php
-class category extends entity
+class categories extends entity
 {
 
 //attributs
@@ -19,7 +19,6 @@ class category extends entity
     $this->name = $name;
   }
 
-  var_dump($name);
   public function getCategory(){
     return $this->name;
   }
