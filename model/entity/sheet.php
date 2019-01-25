@@ -25,7 +25,7 @@ class sheet extends entity
 
   // ------------------ setters ------------------
 
-  public function setSheetId(int $sheetId)
+  public function setSheet_id(int $sheetId)
   {
     return $this->sheetId = $sheetId;
   }
@@ -40,74 +40,74 @@ class sheet extends entity
     return $this->entitled = $entitled;
   }
 
-  public function setStart(date $start)
+  public function setStart(string $start)
   {
     return $this->start = $start;
   }
 
-  public function setEnd(date $end)
+  public function setEnd(string $end)
   {
     return $this->end = $end;
   }
 
-  public function setMondayMorning(bool $mondayMorning)
+  public function setMonday_morning($mondayMorning)
   {
     return $this->mondayMorning = $mondayMorning;
   }
 
-  public function setMondayAfternoon(bool $mondayMorning)
+  public function setMonday_afternoon($mondayAfternoon)
   {
     return $this->mondayAfternoon = $mondayAfternoon;
   }
 
-  public function setTuesdayMorning(bool $tuesdayMorning)
+  public function setTuesday_morning($tuesdayMorning)
   {
     return $this->tuesdayMorning = $tuesdayMorning;
   }
 
-  public function setTuesdayAfternoon(bool $tuesdayAfternoon)
+  public function setTuesday_afternoon($tuesdayAfternoon)
   {
     return $this->tuesdayAfternoon = $tuesdayAfternoon;
   }
 
-  public function setWednesdayMorning(bool $wednesdayMorning)
+  public function setWednesday_morning($wednesdayMorning)
   {
     return $this->wednesdayMorning = $wednesdayMorning;
   }
 
-  public function setWednesdayAfternoon(bool $wednesdayAfternoon)
+  public function setWednesday_afternoon($wednesdayAfternoon)
   {
     return $this->wednesdayAfternoon = $wednesdayAfternoon;
   }
 
-  public function setThursdayMorning(bool $thursdayMorning)
+  public function setThursday_morning($thursdayMorning)
   {
     return $this->thursdayMorning = $thursdayMorning;
   }
 
-  public function setThurdayAfternoon(bool $thurdayAfternoon)
+  public function setThurday_afternoon($thurdayAfternoon)
   {
     return $this->thurdayAfternoon = $thurdayAfternoon;
   }
 
-  public function setFridayMorning(bool $fridayMorning)
+  public function setFriday_morning($fridayMorning)
   {
     return $this->fridayMorning = $fridayMorning;
   }
 
-  public function setFridayAfternoon(bool $fridayAfternoon)
+  public function setFriday_afternoon($fridayAfternoon)
   {
     return $this->fridayAfternoon = $fridayAfternoon;
   }
 
-  public function setCategoryId(int $categoryId)
+  public function setCategory_id($categoryId)
   {
     return $this->categoryId = $categoryId;
   }
 
   // -------------------- getters ---------------------
 
-  public function getSheetId()
+  public function getSheet_id()
   {
     return $this->sheetId;
   }
@@ -132,57 +132,57 @@ class sheet extends entity
     return $this->end;
   }
 
-  public function getMondayMorning()
+  public function getMonday_morning()
   {
     return $this->mondayMorning;
   }
 
-  public function getMondayAfternoon()
+  public function getMonday_afternoon()
   {
     return $this->mondayAfternoon;
   }
 
-  public function getTuesdayMorning()
+  public function getTuesday_morning()
   {
     return $this->tuesdayMorning;
   }
 
-  public function getTuesdayAfternoon()
+  public function getTuesday_afternoon()
   {
     return $this->tuesdayAfternoon;
   }
 
-  public function getWednesdayMorning()
+  public function getWednesday_morning()
   {
     return $this->wednesdayMorning;
   }
 
-  public function getWednesdayAfternoon()
+  public function getWednesday_afternoon()
   {
     return $this->wednesdayAfternoon;
   }
 
-  public function getThursdayMorning()
+  public function getThursday_morning()
   {
     return $this->thursdayMorning;
   }
 
-  public function getThurdayAfternoon()
+  public function getThurday_afternoon()
   {
     return $this->thurdayAfternoon;
   }
 
-  public function getFridayMorning()
+  public function getFriday_morning()
   {
     return $this->fridayMorning;
   }
 
-  public function getFridayAfternoon()
+  public function getFriday_afternoon()
   {
     return $this->fridayAfternoon;
   }
 
-  public function getCategoryId()
+  public function getCategory_id()
   {
     return $this->categoryId;
   }
@@ -190,7 +190,7 @@ class sheet extends entity
   function __construct(array $data = null)
   {
     if ($data) {
-      this->hydrate($data)
+      $this->hydrate($data);
     }
   }
 }

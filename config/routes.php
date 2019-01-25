@@ -109,6 +109,11 @@ function getRoutes() {
       ["id" => ["integer"]],
       "getStatus" => "admin"
     ],
+    "LessonsList" => [
+      "lessons",
+      "showListLessons",
+      ["id" => ["integer"]]
+    ]
   ];
 }
  ?>

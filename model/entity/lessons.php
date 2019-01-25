@@ -6,7 +6,7 @@
 class lessons extends entity
 {
 
-  Attribut : lessons_id(int), week(int), date(datetime), morning(bool), afternoon(bool), evening(bool) et sheet_id(int)
+  // Attribut : lessons_id(int), week(int), date(datetime), morning(bool), afternoon(bool), evening(bool) et sheet_id(int)
 
   protected $lessonsId;
   protected $week;
