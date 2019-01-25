@@ -7,6 +7,7 @@ class categoriesManagement extends manager{
     $result = $query->fetchAll(PDO::FETCH_CLASS, "categorie");
     $query->closeCursor();
     return new catgory($result);
+    var_dump($result);
   }
 
 
