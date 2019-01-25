@@ -21,9 +21,9 @@
 </head>
 <body>
 <a class="nav-link btn btn-danger" href="userLogout">Deconnectez-vous</a>
-  <img class="card-img-top w-25 container d-flex" src="public/img/adep-logo.png" alt="Logo adep">
+  <img class="card-img-top w-25 container d-flex" src="public/img/adep-logo.png" alt="Logo adep" style="width: 4em">
   <div class="card-body">
-    <h2 class="card-text text-center">Bienvenu sur le site de l'Adep.</h2>
+    <h2 class="card-text text-center">Bienvenue sur le site de l'Adep.</h2>
   </div>
 </div>
 <main>

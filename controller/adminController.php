@@ -52,15 +52,18 @@ function showTeacherView() {
     require "view/teacherView.php";
 }
 function showUsersList() {
-    if(!empty($_POST))
-    {
-    $users = sortUser($_POST);
-    }
-    else{
-    $users = getUsers();
-    }
+//     if(!empty($_POST))
+//     {
+//     $users = sortUser($_POST);
+//     }
+//     else{
+//     $users = getUsers();
+//     }
+//   require "view/listUsersView.php";
+// }
+  $usersManagement = new usersManagement();
+  $users = $usersManagement->getUsers();
   require "view/listUsersView.php";
-}
-
+  }
 }
 ?>
