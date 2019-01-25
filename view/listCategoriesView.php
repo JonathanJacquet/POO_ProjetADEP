@@ -1,6 +1,6 @@
 <?php
 include "template/header.php";
-$categories = getCategories();
+
 ?>
 
 <table class="table">
@@ -17,10 +17,10 @@ $categories = getCategories();
     ?>
     <tr>
       <th scope="row"><?php echo $category["category_id"] ?></th>
-      <td><?php echo $category["category_name"] ?></td>
+      <td><?php echo $category->getCategorises(); ?></td>
       <td>
-        <a href="categoryUpdate?id=<?php echo $category["category_id"]?>" class="btn btn-warning">Modifier</a>
-        <a href="categoryDelete?id=<?php echo $category["category_id"]?>" class="btn btn-danger">Supprimer</a>
+        <a class="btn" href="categoryUpdate?id=<?php echo $category->getCategories() ?>">Modifier</a>
+        <a class="btn" href="categoryDelete?id=<?php echo $category->getCategories()?>">Supprimer</a>
       </td>
     </tr>
     <?php
