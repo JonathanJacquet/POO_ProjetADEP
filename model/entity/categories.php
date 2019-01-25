@@ -1,9 +1,12 @@
 <?php
-class category extends entity{
+class category extends entity
+{
+
+//attributs
   protected $id;
   protected $name;
 
-  //Constructor
+//Constructor
   public function __construct($data = null){
     //Permet d'hydrater mon objet
     if($data){
@@ -12,7 +15,7 @@ class category extends entity{
   }
 
 
-  //setter/getter
+//setter/getter
   public function setCategory($name){
     $this->nam = $nam;
   }
