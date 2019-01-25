@@ -1,9 +1,8 @@
 <?php
-class category extends entity
+class categories extends entity
 {
 
 //attributs
-  protected $id;
   protected $name;
 
 //Constructor
@@ -17,8 +16,9 @@ class category extends entity
 
 //setter/getter
   public function setCategory($name){
-    $this->nam = $nam;
+    $this->name = $name;
   }
+
   public function getCategory(){
     return $this->name;
   }
